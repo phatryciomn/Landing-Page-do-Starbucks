@@ -13,6 +13,25 @@
     background-size: contain;
 }
 
+.title {
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    color: var(--color-neutral-8);
+    font-weight: 700;
+    position: relative;
+
+    &::before {
+        content: '';
+        display: block;
+        width: 60px;
+        height: 4px;
+        background-color: var(--color-primary-1);
+        position: absolute;
+        bottom: 0;
+        border-radius: 30px;
+    }
+}
+
 a.btn {
     text-decoration: none;
 }
@@ -90,81 +109,59 @@ a.btn {
     }
 }
 
-header {
-    background-color: var(--color-neutral-1);
-    padding: 12px 4%;
-    position: sticky;
-    top: 0;
-    z-index: 1;
+#trending {
+    padding: 32px 4%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+    min-height: calc(100vh - 96px);
 
-    .navbar {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+    .trending-cards {
+        .trending-card {
+            position: relative;
 
-        .logo {
-            width: 180px;
-        }
-
-        ul {
-            display: none;
-            list-style: none;
-            flex-direction: column;
-            gap: 0.5rem;
-            width: 100%;
-            position: absolute;
-            top: 80px;
-            background-color: var(--color-neutral-1);
-            left: 0;
-            padding: 1rem;
-
-            &.show{
-                display: flex;
+            img {
+                width: clamp(300px, 5vw, 600px);
             }
 
-            li {
-                text-align: center;
+            .trending-rate {
+                background-color: var(--color-neutral-0);
+                position: absolute;
+                bottom: 70px;
+                right: 30px;
+                padding: 5px 10px;
 
-                a {
-                    color: var(--color-neutral-8);
-                    text-decoration: none;
-                    font-size: 1rem;
-                    font-weight: 500;
-                    transition: all 0.4s ease;
-
-                    &:hover {
-                        color: var(--color-primary-1);
-                        border-bottom: 1px solid var(--color-primary-1);
-                    }
+                i {
+                    color: var(--color-secondery-1);
                 }
             }
-        }
 
-        .btn-default {
-            display: none;
+            .trending-card-description {
+                display: flex;
+                flex-direction: column;
+                text-align: center;
+                font-size: 1.3rem;
+                font-weight: 600;
+                color: var(--color-neutral-8);
+            }
+
+            span {
+                font-size: 1rem;
+                font-weight: 500;
+                color: var(--color-neutral-7);
+            }
         }
     }
 }
 
-@media (min-width: 769px) {
-    header {
-        .navbar {
-            .btn-mobile {
-                display: none;
-            }
-
-            ul {
-                display: flex;
-                flex-direction: row;
-                position: static;
-                gap: 1rem;
-                width: auto;
-                padding: 0;
-            }
-
-            .btn-default {
-                display: block;
-            }
+@media (min-width: 768px) {
+    #trending {
+        .trending-cards {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 24px;
         }
     }
 }
