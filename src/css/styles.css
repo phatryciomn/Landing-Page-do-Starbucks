@@ -271,9 +271,33 @@ a.btn {
                         color: var();
                         font-size: 1.2rem;
                     }
+
+                    .m-chocolate {
+                        color: var(--color-neutral-7);
+                    }
+                    .m-morango {
+                        color: var(--color-primary-4);
+                    }
+                    .m-cafe {
+                        color: var(--color-primary-5);
+                    }
+                    .m-manga {
+                        color: var(--color-secondery-1);
+                    }
                 }
             }
         }
+    }
+}
+
+footer {
+    background-color: var(--color-primary-1);
+    color: var(--color-neutral-0);
+    text-align: center;
+    padding: 12px;
+
+    p {
+        font-size: 1rem;
     }
 }
 
